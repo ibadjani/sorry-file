@@ -1,74 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sorry </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            margin-top: 100px;
-            background-color: #f2f2f2;
         }
 
-        .box {
+        .container {
             background: white;
-            padding: 40px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             width: 350px;
-            margin: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h1 { color: #ff4d6d; }
+        p { color: #555; }
+
+        .btn-group {
+            margin-top: 20px;
+            position: relative;
+            height: 100px;
         }
 
         button {
-            padding: 10px 20px;
-            margin: 10px;
+            padding: 10px 25px;
             font-size: 16px;
+            border-radius: 10px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
+            transition: 0.2s;
         }
 
-        .accept {
-            background-color: green;
+        #acceptBtn {
+            background-color: #4CAF50;
             color: white;
+            position: absolute;
+            left: 50px;
         }
 
-        .not-accept {
-            background-color: red;
+        #declineBtn {
+            background-color: #ff4d6d;
             color: white;
-        }
-
-        #message {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: blue;
+            position: absolute;
+            right: 50px;
         }
     </style>
 </head>
 <body>
 
-<div class="box">
-    <h2>Sorry Ayesha </h2>
-    <p>Please accept my sorry </p>
-
-  
-    <button class="accept" onclick="tryAgain()">Accept it</button>
-
-  
-    <button class="not-accept" onclick="accepted()">Not Accept</button>
-
-    <div id="message"></div>
+<div class="container">
+    <h1>I am so sorry! 🥺</h1>
+    <p>Do you forgive me? Please say yes.</p>
+    
+    <div class="btn-group">
+        <button id="acceptBtn">Accept</button>
+        <button id="declineBtn" onclick="alert('Yay! I knew you forgive me 😆')">Decline</button>
+    </div>
 </div>
 
 <script>
-    function tryAgain() {
-        document.getElementById("message").innerHTML = "Please Try Again Or Click on Not Accepted";
-    }
+    const acceptBtn = document.getElementById('acceptBtn');
 
-    function accepted() {
-        document.getElementById("message").innerHTML = "Accepted Successfully 😂";
-    }
+
+    acceptBtn.addEventListener('mouseover', () => {
+        const x = Math.random() * (window.innerWidth - acceptBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - acceptBtn.offsetHeight);
+        
+        acceptBtn.style.left = x + 'px';
+        acceptBtn.style.top = y + 'px';
+        acceptBtn.style.position = 'fixed';
+    });
+
+
+    acceptBtn.onclick = () => {
+        alert("How did you catch me?! Fine, I guess you don't forgive me...");
+    };
 </script>
 
 </body>
