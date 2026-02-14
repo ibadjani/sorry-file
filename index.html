@@ -3,96 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sone ka Time!</title>
+    <title>Class 2026 Romance Report</title>
     <style>
         body {
+            background-color: #1a1a1a;
+            color: #ff4d6d;
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #0b1120; /* Dark night sky */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: white;
             overflow: hidden;
         }
-
-        .card {
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            text-align: center;
-            border: 2px solid #334155;
-            width: 320px;
+        .container {
+            border: 2px solid #ff4d6d;
+            padding: 30px;
+            background: #2a2a2a;
+            box-shadow: 10px 10px 0px #ff4d6d;
+            max-width: 80%;
         }
-
-        h1 { font-size: 24px; margin-bottom: 10px; color: #fbbf24; }
-        p { font-size: 18px; color: #cbd5e1; margin-bottom: 30px; }
-
-        .btn-container {
-            position: relative;
-            height: 60px;
-        }
-
+        h1 { font-size: 1.5rem; text-transform: uppercase; }
+        .btn-group { margin-top: 30px; position: relative; height: 150px; }
         button {
-            padding: 12px 25px;
-            font-size: 16px;
+            padding: 15px 25px;
             font-weight: bold;
-            border-radius: 50px;
-            border: none;
             cursor: pointer;
-            transition: transform 0.1s;
+            border: 3px solid #ff4d6d;
+            background: transparent;
+            color: #ff4d6d;
+            margin: 10px;
         }
-
-        #stayUpBtn {
-            background-color: #ef4444;
-            color: white;
-            position: absolute;
-            left: 10px;
-        }
-
-        #sleepBtn {
-            background-color: #10b981;
-            color: white;
-            position: absolute;
-            right: 10px;
-        }
-
-        .moon { font-size: 50px; margin-bottom: 10px; }
+        button:hover { background: #ff4d6d; color: white; }
+        #noBtn { position: absolute; transition: 0.1s; }
+        #result { display: none; font-size: 1.2rem; color: #00ff00; }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="moon">AYESHA</div>
-    <h1>Bohot Late Ho Gaya!</h1>
-    <p>Time late hai ab sojao shabas...</p>
-    
-    <div class="btn-container">
-        <button id="stayUpBtn">Nahi Sona!</button>
-        <button id="sleepBtn" onclick="goodnight()">Ok So Jate hon</button>
-    </div>
-</div>
-
-<script>
-    const stayUpBtn = document.getElementById('stayUpBtn');
-
-    // The "Funny" part: The button runs away
-    stayUpBtn.addEventListener('mouseover', () => {
-        const x = Math.random() * (window.innerWidth - stayUpBtn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - stayUpBtn.offsetHeight);
+    <div class="container" id="mainBox">
+        <h1>ROMANCE STATUS: FEBRUARY 14</h1>
+        <p>System detected 0 dates.</p>
+        <p><strong>Do you actually have a Valentine?</strong></p>
         
-        stayUpBtn.style.position = 'fixed';
-        stayUpBtn.style.left = x + 'px';
-        stayUpBtn.style.top = y + 'px';
-    });
+        <div class="btn-group">
+            <button id="yesBtn" onclick="showTruth()">YES, I DO</button>
+            <button id="noBtn" onmouseover="runAway()">NO, I'M SANE</button>
+        </div>
+    </div>
 
-    function goodnight() {
-        alert("Shabas! SOJAO ");
-        window.close(); // Tries to close the tab
-    }
-</script>
+    <div id="result">
+        <h1 style="font-size: 3rem;">❌ ERROR: CAP DETECTED</h1>
+        <p>Our database shows you are Single 😂/sleep.</p>
+        <p>Happy "Save Money Day" to everyone </p>
+        <button onclick="location.reload()">RE-CALCULATE (If you want to lie again)</button>
+    </div>
+
+    <script>
+        function runAway() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function showTruth() {
+            document.getElementById('mainBox').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            document.body.style.backgroundColor = "#000";
+        }
+    </script>
 
 </body>
 </html>
