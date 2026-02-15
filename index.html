@@ -6,12 +6,11 @@
     <title>Happy Birthday Ayesha!</title>
     
     <style>
-        /* CSS - Styling */
+    
         body {
-            /* Background Image Logic */
-            /* You can replace the URL below with your own image path */
-            background-image: url('https://images.unsplash.com/photo-1464349153916-6ba927d71710?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; /* Image ko poori screen par fit karta hai */
+
+            background-image: url(''); 
+            background-size: cover; 
             background-repeat: no-repeat;
             background-attachment: fixed;
             text-align: center;
@@ -20,7 +19,7 @@
         }
 
         .card {
-            background-color: rgba(255, 255, 255, 0.9); /* 0.9 means slightly transparent */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 50px;
             border-radius: 20px;
             box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
@@ -42,7 +41,7 @@
             font-weight: bold;
         }
 
-        /* Button Styling */
+    
         button {
             padding: 15px 30px;
             font-size: 20px;
@@ -52,12 +51,12 @@
             border-radius: 50px;
             cursor: pointer;
             margin-top: 20px;
-            transition: 0.3s; /* Smooth hover effect */
+            transition: 0.3s; 
         }
 
         button:hover {
             background-color: #cc0000;
-            transform: scale(1.1); /* Hover karne par button thora bara ho jayega */
+            transform: scale(1.1); 
         }
 
     </style>
@@ -65,9 +64,9 @@
 <body>
 
     <div class="card">
-        <h1>🎉 Happy Birthday Ayesha! 🎂</h1>
-        <p>You are the best sister ever!</p>
-        <p>Wishing you a fantastic year ahead! 🎁✨</p>
+        <h1>Happy Birthday Ayesha </h1>
+        <p>You are the best sister ever</p>
+        <p>STAY HAPPY JUST THE WAY YOU ARE</p>
 
         <button id="musicBtn" onclick="toggleMusic()">🎵 Play Birthday Song</button>
     </div>
@@ -78,8 +77,6 @@
     </audio>
 
     <script>
-        /* JavaScript - The Logic */
-        /* Yeh script button click hone par song play/pause karegi */
         
         var isPlaying = false;
         var audio = document.getElementById("birthdayAudio");
@@ -92,7 +89,7 @@
                 isPlaying = false;
             } else {
                 audio.play();
-                btn.innerText = "⏸️ Pause Song";
+                btn.innerText = "Pause Song";
                 isPlaying = true;
             }
         }
